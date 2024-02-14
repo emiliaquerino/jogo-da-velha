@@ -78,16 +78,16 @@ window.addEventListener("DOMContentLoaded", () => {
         break;
       }
     }
-  
+
     if (roundWon) {
       announce(currentPlayer === "X" ? PLAYERX_WON : PLAYERO_WON);
       isGameActive = false;
       return;
     }
-  
+
     if (!board.includes("")) announce(TIE);
   }
-  
+
   const userAction = (box, index) => {
     if (isValidAction(box) && isGameActive) {
       box.innerText = currentPlayer;
@@ -98,24 +98,25 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  boxes.forEach( (box, index) => {
-    box.addEventListener('click', () => userAction(box, index));
-});
+  boxes.forEach((box, index) => {
+    box.addEventListener("click", () => userAction(box, index));
+  });
 
-const resetBoard = () => {
-    board = ['', '', '', '', '', '', '', '', ''];
+  const resetBoard = () => {
+    board = ["", "", "", "", "", "", "", "", ""];
     isGameActive = true;
-    announcer.classList.add('hide');
+    announcer.classList.add("hide");
 
-    if (currentPlayer === 'O') {
-        changePlayer();
+    if (currentPlayer === "O") {
+      changePlayer();
     }
 
-    boxes.forEach(box => {
-        box.innerText = '';
-        box.classList.remove('playerX');
-        box.classList.remove('playerO');
+    boxes.forEach((box) => {
+      box.innerText = "";
+      box.classList.remove("playerX");
+      box.classList.remove("playerO");
     });
-}
-
+  };
+  
+  resetButton.addEventListener("click", resetBoard);
 });
