@@ -19,24 +19,26 @@ window.addEventListener("DOMContentLoaded", () => {
     [2, 4, 6],
   ];
 
-    /*
+  /*
    Indexes within the board
    [0] [1] [2]
    [3] [4] [5]
    [6] [7] [8]
 */
 
-
   let board = ["", "", "", "", "", "", "", "", ""];
   let currentPlayer = "X";
   let isGameActive = true;
 
-const isValidAction = (box) => {
-    if (box.innerText === 'X' || box.innerText === 'O'){
-        return false;
+  const isValidAction = (box) => {
+    if (box.innerText === "X" || box.innerText === "O") {
+      return false;
     }
 
     return true;
-};
- 
+  };
+
+  const updateBoard = (index) => {
+    board[index] = currentPlayer;
+  };
 });
