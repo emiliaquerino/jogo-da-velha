@@ -1,5 +1,7 @@
 /* FONTS */
 
+/* VARIABLES */
+
 /* RESET CSS */
 * {
     padding: 0;
@@ -13,6 +15,17 @@
     grid-template-columns: 33% 33% 33%;
     grid-template-rows: 33% 33% 33%;
     max-width: 300px;
+}
+
+.tile {
+    border: 1px solid hsl(280, 67%, 41%);
+    min-width: 100px;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    cursor: pointer;
 }
 
 .playerX {
