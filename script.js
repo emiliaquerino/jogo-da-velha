@@ -102,4 +102,20 @@ window.addEventListener("DOMContentLoaded", () => {
     box.addEventListener('click', () => userAction(box, index));
 });
 
+const resetBoard = () => {
+    board = ['', '', '', '', '', '', '', '', ''];
+    isGameActive = true;
+    announcer.classList.add('hide');
+
+    if (currentPlayer === 'O') {
+        changePlayer();
+    }
+
+    boxes.forEach(box => {
+        box.innerText = '';
+        box.classList.remove('playerX');
+        box.classList.remove('playerO');
+    });
+}
+
 });
