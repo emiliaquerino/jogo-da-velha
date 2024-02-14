@@ -98,4 +98,8 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  boxes.forEach( (box, index) => {
+    box.addEventListener('click', () => userAction(box, index));
+});
+
 });
