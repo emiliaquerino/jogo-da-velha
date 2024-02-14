@@ -88,4 +88,14 @@ window.addEventListener("DOMContentLoaded", () => {
     if (!board.includes("")) announce(TIE);
   }
   
+  const userAction = (box, index) => {
+    if (isValidAction(box) && isGameActive) {
+      box.innerText = currentPlayer;
+      box.classList.add(`player${currentPlayer}`);
+      updateBoard(index);
+      handleResultValidation();
+      changePlayer();
+    }
+  };
+
 });
