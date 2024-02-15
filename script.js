@@ -78,15 +78,20 @@ window.addEventListener("DOMContentLoaded", () => {
         break;
       }
     }
-
+  
     if (roundWon) {
       announce(currentPlayer === "X" ? PLAYERX_WON : PLAYERO_WON);
+      alert(`Jogador ${currentPlayer} venceu!`);
       isGameActive = false;
       return;
     }
-
-    if (!board.includes("")) announce(TIE);
+  
+    if (!board.includes("")) {
+      announce(TIE);
+      alert("Empate!");
+    }
   }
+  
 
   const userAction = (box, index) => {
     if (isValidAction(box) && isGameActive) {
