@@ -7,6 +7,7 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -20,14 +21,30 @@ h1 {
     color: hsl(280, 67%, 41%);
 }
 
+.display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 18px 0;
+    font-size: 20px;
+    font-weight: bold;
+}
 
-/* TABULEIRO */
+.game-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    padding: 30px;
+}
+
 .game-boader {
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-template-rows: 33% 33% 33%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     max-width: 300px;
+    gap: 5px;
 }
 
 .box {
@@ -39,6 +56,7 @@ h1 {
     align-items: center;
     font-size: 50px;
     cursor: pointer;
+    background-color: hsl(262, 100%, 22%);
 }
 
 .playerX {
@@ -47,5 +65,27 @@ h1 {
 
 .playerO {
     color: #498AFB;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#reset {
+    background-color: hsl(280, 67%, 41%);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 0 10px hsl(0, 0%, 69%);
+}
+
+#reset:hover {
+    background-color:  hsl(280, 69%, 57%);; /* Cor de fundo quando o mouse passa por cima */
+    color: #fff; /* Cor do texto quando o mouse passa por cima */
 }
 

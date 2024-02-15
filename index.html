@@ -9,12 +9,13 @@
   </head>
   <body>
     <main class="background">
-            <section class="box">
-                <h1>Jogo da Velha</h1>
+            <section class="game-name">
+                <h1> tic tac toe</h1>
             </section>
             <section class="display"> <!-- turn display -->
                 Player <span class="display-player playerX">X</span>'s turn
             </section>
+            <section class="display announcer hide"></section> <!-- resultado final -->
             <section class="game-boader"> <!-- tabuleiro -->
                 <div class="box"></div>
                 <div class="box"></div>
@@ -26,7 +27,6 @@
                 <div class="box"></div>
                 <div class="box"></div>
             </section>
-            <section class="display announcer hide"></section> <!-- resultado final -->
             <section class="controls"> <!--controles -->
                 <button id="reset">Reset</button>
             </section>
