@@ -89,3 +89,6 @@ h1 {
     color: #fff; /* Cor do texto quando o mouse passa por cima */
 }
 
+.hide {
+    display: none;
+}
