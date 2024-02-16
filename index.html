@@ -12,10 +12,10 @@
             <section class="game-name">
                 <h1> tic tac toe</h1>
             </section>
-            <section class="display"> <!-- turn display -->
+            <section class="display result"> <!-- turn display -->
                 Player <span class="display-player playerX">X</span>'s turn
             </section>
-            <section class="display announcer hide"></section> <!-- resultado final -->
+            <section class="display announcer"></section> <!-- resultado final -->
             <section class="game-boader"> <!-- tabuleiro -->
                 <div class="box"></div>
                 <div class="box"></div>
@@ -29,6 +29,10 @@
             </section>
             <section class="controls"> <!--controles -->
                 <button id="reset">Reset</button>
+            </section>
+            <section id="victory-count">
+              <p>X Wins: <span id="wins-x">0</span></p>
+              <p>O Wins: <span id="wins-o">0</span></p>
             </section>
         </main>
   </body>
