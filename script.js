@@ -47,14 +47,14 @@ window.addEventListener("DOMContentLoaded", () => {
     switch (type) {
       case PLAYERO_WON:
         winsO += 1;
-        announcer.innerHTML = 'Player <span class="playerO">O</span> Won!';
+        announcer.innerHTML = 'Player <span class="playerO">O</span> WON!';
         break;
       case PLAYERX_WON:
         winsX += 1;
-        announcer.innerHTML = 'Player <span class="playerX">X</span> Won!';
+        announcer.innerHTML = 'Player <span class="playerX">X</span> WON!';
         break;
       case TIE:
-        announcer.innerText = "TIE!";
+        announcer.innerText = 'TIE!';
         break;
     }
     result.classList.add("hide");
@@ -87,10 +87,14 @@ window.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    // Verifica se todas as células estão preenchidas (empate)
     if (!board.includes("")) {
       announce(TIE);
+      isGameActive = false; // Marca o jogo como inativo após um empate
+      return;
     }
   };
+
 
   const userAction = (box, index) => {
     if (isValidAction(box) && isGameActive) {
