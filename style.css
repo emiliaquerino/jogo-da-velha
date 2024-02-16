@@ -71,6 +71,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 10px;
 }
 
 #reset {
@@ -91,4 +92,14 @@ h1 {
 
 .hide {
     display: none;
+}
+
+#victory-count {
+    margin: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: hsl(0, 0%, 0%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
