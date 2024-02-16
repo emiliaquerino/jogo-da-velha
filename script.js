@@ -1,6 +1,5 @@
-// Inicialização do jogo
 window.addEventListener("DOMContentLoaded", () => {
-  // Constantes
+  
   const PLAYERX_WON = "PLAYERX_WON";
   const PLAYERO_WON = "PLAYERO_WON";
   const TIE = "TIE";
@@ -15,21 +14,18 @@ window.addEventListener("DOMContentLoaded", () => {
     [2, 4, 6],
   ];
 
-  // Elementos do DOM
   const boxes = Array.from(document.querySelectorAll(".box"));
   const playerDisplay = document.querySelector(".display-player");
   const resetButton = document.querySelector("#reset");
   const announcer = document.querySelector(".announcer");
   const result = document.querySelector(".result");
 
-  // Variáveis de estado do jogo
   let board = ["", "", "", "", "", "", "", "", ""];
   let currentPlayer = "X";
   let isGameActive = true;
   let winsX = 0;
   let winsO = 0;
-
-  // Funções de atualização e estado
+  
   const isValidAction = (box) => box.innerText === "X" || box.innerText === "O" ? false : true;
 
   const updateBoard = (index) => {
@@ -47,11 +43,11 @@ window.addEventListener("DOMContentLoaded", () => {
     switch (type) {
       case PLAYERO_WON:
         winsO += 1;
-        announcer.innerHTML = 'Player <span class="playerO">O</span> WON!';
+        announcer.innerHTML = 'PLAYER <span class="playerO">O</span> WON!';
         break;
       case PLAYERX_WON:
         winsX += 1;
-        announcer.innerHTML = 'Player <span class="playerX">X</span> WON!';
+        announcer.innerHTML = 'PLAYER <span class="playerX">X</span> WON!';
         break;
       case TIE:
         announcer.innerText = 'TIE!';
@@ -73,9 +69,9 @@ window.addEventListener("DOMContentLoaded", () => {
         continue;
       }
       if (a === b && b === c) {
-        boxes[winCondition[0]].style.color = 'red';
-        boxes[winCondition[1]].style.color = 'red';
-        boxes[winCondition[2]].style.color = 'red';
+        boxes[winCondition[0]].style.color = 'green';
+        boxes[winCondition[1]].style.color = 'green';
+        boxes[winCondition[2]].style.color = 'green';
         roundWon = true;
         break;
       }
@@ -87,14 +83,12 @@ window.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Verifica se todas as células estão preenchidas (empate)
     if (!board.includes("")) {
       announce(TIE);
-      isGameActive = false; // Marca o jogo como inativo após um empate
+      isGameActive = false; 
       return;
     }
   };
-
 
   const userAction = (box, index) => {
     if (isValidAction(box) && isGameActive) {
