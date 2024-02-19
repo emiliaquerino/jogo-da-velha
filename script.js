@@ -103,8 +103,9 @@ window.addEventListener("DOMContentLoaded", () => {
   const resetBoard = () => {
     board.fill("");
     isGameActive = true;
-    announcer.classList.add("hide");
+    announcer.classList.remove("hide");
     announcer.innerText = ''; 
+    result.classList.remove("hide"); 
     if (currentPlayer === "O") {
       changePlayer();
     }
@@ -114,6 +115,8 @@ window.addEventListener("DOMContentLoaded", () => {
       box.classList.remove("playerX", "playerO");
     });
   };
+  
+  
   
 
   // Funções de armazenamento local
