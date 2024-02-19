@@ -104,13 +104,13 @@ window.addEventListener("DOMContentLoaded", () => {
     board.fill("");
     isGameActive = true;
     announcer.classList.add("hide");
-    announcer.innerText = '';  //nova linha incluída
+    announcer.innerText = ''; 
     if (currentPlayer === "O") {
       changePlayer();
     }
     boxes.forEach((box) => {
       box.innerText = "";
-      box.style.color = ''; // nova linha incluída
+      box.style.color = ''; 
       box.classList.remove("playerX", "playerO");
     });
   };
