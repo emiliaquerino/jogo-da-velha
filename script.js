@@ -104,14 +104,17 @@ window.addEventListener("DOMContentLoaded", () => {
     board.fill("");
     isGameActive = true;
     announcer.classList.add("hide");
+    announcer.innerText = '';  //nova linha incluída
     if (currentPlayer === "O") {
       changePlayer();
     }
     boxes.forEach((box) => {
       box.innerText = "";
+      box.style.color = ''; // nova linha incluída
       box.classList.remove("playerX", "playerO");
     });
   };
+  
 
   // Funções de armazenamento local
   const saveWinsToLocalStorage = () => {
